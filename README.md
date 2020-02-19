@@ -1,3 +1,10 @@
+### Sample Code for B5T-007001(HVC-P2) including simple GUI interface
+
+A simple GUI is added.
+Tested on Raspberry Pi 4.
+
+Below is the original README
+***
 ### Sample Code for B5T-007001(HVC-P2)
 ***
 - This is sample code for **[B5T-007001](https://www.components.omron.com/mobile/hvc_p2) (OMRON Human Vision Components HVC-P2)**.<br><br>
