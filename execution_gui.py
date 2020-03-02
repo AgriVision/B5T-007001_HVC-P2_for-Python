@@ -24,7 +24,8 @@ from serial_connector import SerialConnector
 from hvc_p2_api import HVCP2Api
 from hvc_tracking_result import HVCTrackingResult
 from grayscale_image import GrayscaleImage
-from PIL import Image, ImageDraw
+from PIL import Image, ImageDraw, ImageFont
+
 
 import io
 import PySimpleGUI27 as sg
@@ -324,6 +325,10 @@ def main():
                         if 'Female' in genderstring.__str__():
                             boxcolor = (255,64,255)
                         draw.rectangle(box, outline=boxcolor, width=2)
+                        if hvc_tracking_result.faces[f].age.tracking_status >= 0:
+                            age = hvc_tracking_result.faces[f].age.age
+                            draw.text((pos_x-size, pos_y-size-16), str(age), font=ImageFont.truetype("FreeMonoBold",16), fill=boxcolor)
+
 
                 bio = io.BytesIO()  # a binary memory resident stream
                 pilim.save(bio, format= 'PNG')  # save image as png to it
